@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+  </head>
+  <body class="bg-gray-10">
+    <header class="bg-amber-50 py-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-orange-500 text-xl font-bold">E-commerce</h1>
+                <nav class="flex space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Jewelry & Accessories</a>
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Clothing & Shoes</a>
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Home & Living</a>
+                    <a href="#" class="text-orange-500 border-b-2 border-orange-500">Wedding & Party</a>
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Toys & Entertainment</a>
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Art & Collectibles</a>
+                    <a href="#" class="text-gray-700 hover:text-orange-500">Craft Supplies & Tools</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <select class="bg-gray-100 text-gray-700 py-2 px-4 rounded-l-full border-r-0">
+                        <option>All categories</option>
+                    </select>
+                    <input type="text" placeholder="Search anything" class="bg-gray-100 py-2 px-4 rounded-r-full border-l-0">
+                    <button class="absolute right-0 top-0 mt-2 mr-2 text-gray-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="bg-orange-500 text-white py-2 px-4 rounded-full">Help</button>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-user text-gray-700"></i>
+                    <span class="text-gray-700">Account</span>
+                </div>
+                <div class="relative flex items-center space-x-2">
+                    <i class="fas fa-shopping-bag text-gray-700"></i>
+                    <span class="text-gray-700">Shopping</span>
+                    <span class="absolute top-0 right-0 bg-orange-500 text-white text-xs rounded-full px-2">18</span>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+<!--End Header-->
+
+<!--Start Product Detail-->
+  <body>
+    <main class="container">
+
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" src="images/black.png" alt="">
+        <img data-image="blue" src="images/blue.png" alt="">
+        <img data-image="red" class="active" src="images/red.png" alt="">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>Headphones</span>
+          <h1 style="font-weight: bold;">Beats EP</h1>
+          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+        </div>
+
+        <div class="product-configuration">
+          <div class="product-color">
+            <span>Color</span>
+
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="cable-config">
+            <span>Cable configuration</span>
+
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="product-price">
+          <span style="font-weight: bold;">148$</span>
+          <a href="#" class="cart-btn">Add to cart</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+  <!--End Product Detail-->
+</html>
