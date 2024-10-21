@@ -1,0 +1,142 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #fffbea;
+    padding: 16px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    color: #f97316;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 32px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-item {
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+.nav-item:hover {
+    color: #f97316;
+}
+
+.active {
+    color: #f97316;
+    border-bottom: 2px solid #f97316;
+}
+
+.search-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.category-dropdown {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 8px 16px;
+    border-radius: 9999px 0 0 9999px;
+    border-right: none;
+    outline: none;
+    border: 1px solid #d1d5db;
+}
+
+.search-input {
+    background-color: #f3f4f6;
+    padding: 8px 16px;
+    border-radius: 0 9999px 9999px 0;
+    border-left: none;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.search-btn i {
+    font-size: 16px;
+}
+
+.help-btn {
+    background-color: #f97316;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+}
+
+.account i {
+    font-size: 18px ;
+}
+
+.cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+}
+
+.cart i {
+    font-size: 18px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #f97316;
+    color: white;
+    font-size: 12px;
+    border-radius: 9999px;
+    padding: 4px 8px;
+}
