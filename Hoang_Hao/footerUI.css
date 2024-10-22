@@ -1,8 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
     margin: 0;
     padding: 0;
-    background-color: #f9fafb;
 }
 
 .footer-logo {
@@ -15,7 +15,7 @@ body {
 .footer {
     background-color: #fff;
     padding: 32px 0;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid #ddd;
 }
 
 .footer-container {

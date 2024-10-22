@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Hoang_Hao/headerUI.css">
+    <link rel="stylesheet" href="Hoang_Hao/footerUI.css">
+    <link rel="stylesheet" href="Hoang_Hao/product.css">
+</head>
+
+<body>
+    <!-- Tích hợp Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-and-nav">
+                <h1 class="logo">E-commerce</h1>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link">Jewelry & Accessories</a>
+                    <a href="#" class="nav-link">Clothing & Shoes</a>
+                    <a href="#" class="nav-link">Home & Living</a>
+                    <a href="#" class="nav-link active-link">Wedding & Party</a>
+                    <a href="#" class="nav-link">Toys & Entertainment</a>
+                    <a href="#" class="nav-link">Art & Collectibles</a>
+                    <a href="#" class="nav-link">Craft Supplies & Tools</a>
+                </nav>
+            </div>
+            <div class="search-actions">
+                <div class="search-bar">
+                    <select class="category-dropdown">
+                        <option>All categories</option>
+                    </select>
+                    <input type="text" placeholder="Search anything" class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="help-btn">Help</button>
+                <div class="account">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </div>
+                <div class="cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Shopping</span>
+                    <span class="cart-count">18</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung sản phẩm -->
+    <main class="product-container">
+        <h2>Products</h2>
+        <div id="products" class="product-list"></div>
+    </main>
+
+    <!-- Tích hợp Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="footer-logo">E-commerce</h2>
+                <p>Cricklewood, London<br> NW2 6qg, UK</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Gift cards</a></li>
+                    <li><a href="#">Site map</a></li>
+                    <li><a href="#">Polka blog</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sell</h3>
+                <ul>
+                    <li><a href="#">Sell on Polka</a></li>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Forums</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Polka, Inc.</a></li>
+                    <li><a href="#">Policies</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Trust and safety</a></li>
+                    <li><a href="#">Privacy settings</a></li>
+                </ul>
+            </div>
+            <div class="lower-footer">
+                <p>© 2022 Commerce, Inc.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy policy</a>
+                    <a href="#" class="highlight">Terms of use</a>
+                    <a href="#">Cookies</a>
+                </div>
+                <a href="#" class="scroll-top">Scroll to top <i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fake API
+        fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(json => {
+        const productsContainer = document.getElementById('products');
+        json.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product-item');
+            productDiv.innerHTML = `
+                <h3>${product.title}</h3>
+                <img src="${product.image}" alt="${product.title}">
+                <p>${product.description.substring(0, 50)}...</p>
+                <p>Price: $${product.price}</p>
+            `;
+            productsContainer.appendChild(productDiv);
+        });
+    })
+    .catch(err => console.error(err));
+
+    </script>
+</body>
+</html>
