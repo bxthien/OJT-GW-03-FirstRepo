@@ -45,6 +45,7 @@ function searchProducts() {
     displayProducts(filteredProducts);
 }
 
+
 // Listen for Enter key press
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
