@@ -6,6 +6,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
+        position: relative;
     }
 
 
@@ -17,9 +18,9 @@
     .login-container {
         background-color: #fff;
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        height: 90%;
+        
         width: 30%;
 
     }
@@ -81,4 +82,29 @@
             font-size: 14px;
     }   
 
-       
+.toast{
+    display: flex;
+    gap:2px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: max-content;
+    /* background-color: white; */
+
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    padding: 5px 20px;
+    border-radius: 15px;
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}  
+
+.toast span{
+    color: white;
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
