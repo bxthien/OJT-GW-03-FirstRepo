@@ -48,10 +48,11 @@ function searchProducts() {
 
 // Listen for Enter key press
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
+    if(event.key === 'Enter') {
         searchProducts();
     }
 });
+
 
 // Listen for search icon click
 document.querySelector('.search-icon').addEventListener('click', function() {
