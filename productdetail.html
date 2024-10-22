@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+
+  </head>
+  <body class="background-gray">
+    <header class="header-amber">
+        <div class="container">
+            <div class="logo-nav">
+                <h1 class="logo">E-commerce</h1>
+                <nav class="nav-links">
+                    <a href="#" class="nav-item">Jewelry & Accessories</a>
+                    <a href="#" class="nav-item">Clothing & Shoes</a>
+                    <a href="#" class="nav-item">Home & Living</a>
+                    <a href="#" class="nav-item active">Wedding & Party</a>
+                    <a href="#" class="nav-item">Toys & Entertainment</a>
+                    <a href="#" class="nav-item">Art & Collectibles</a>
+                    <a href="#" class="nav-item">Craft Supplies & Tools</a>
+                </nav>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <select class="select-category">
+                        <option>All categories</option>
+                    </select>
+                    <input type="text" placeholder="Search anything" class="search-input">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="help-button">Help</button>
+                <div class="account">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </div>
+                <div class="shopping-cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Shopping</span>
+                    <span class="cart-count">18</span>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+<!--End Header-->
+
+<!--Start Product Detail-->
+  <body>
+    <main class="container">
+
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" src="images/black.png" alt="">
+        <img data-image="blue" src="images/blue.png" alt="">
+        <img data-image="red" class="active" src="images/red.png" alt="">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>Headphones</span>
+          <h1 style="font-weight: bold;">Beats EP</h1>
+          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+        </div>
+
+        <div class="product-configuration">
+          <div class="product-color">
+            <span>Color</span>
+
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="cable-config">
+            <span>Cable configuration</span>
+
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="product-price">
+          <span style="font-weight: bold;">148$</span>
+          <a href="#" class="cart-btn">Add to cart</a>
+        </div>
+      </div>
+    </main>
+
+  </body>
+  <!--End Product Detail-->
+</html>
