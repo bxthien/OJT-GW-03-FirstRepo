@@ -15,7 +15,7 @@ html, body {
 
 /* Columns */
 .left-column {
-  width: 65%;
+  width: 55%;
   position: relative;
 }
 
@@ -27,7 +27,7 @@ html, body {
 
 /* Left Column */
 .left-column img {
-  width: 100%;
+  width: 80%;
   position: absolute;
   left: 0;
   top: 0;
@@ -287,4 +287,117 @@ html, body {
 
 .rounded-r-full {
   border-radius: 0 9999px 9999px 0;
+}
+
+
+/* Background */
+.background-gray {
+  background-color: #f7fafc; /* Màu nền xám */
+}
+
+/* Header */
+.header-amber {
+  background-color: #fffbeb; /* Màu nền vàng nhạt */
+  padding: 1rem 0; /* Padding trên và dưới */
+}
+
+
+/* Logo and Navigation */
+.logo-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #dd6b20; /* Màu cam */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Khoảng cách giữa các link */
+}
+
+.nav-item {
+  color: #4a5568; /* Màu xám */
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: #dd6b20; /* Màu cam khi hover */
+}
+
+.nav-item.active {
+  color: #dd6b20; /* Màu cam cho mục đang chọn */
+  border-bottom: 2px solid #dd6b20; /* Đường viền dưới */
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Khoảng cách giữa các mục */
+}
+
+.search-bar {
+  position: relative;
+}
+
+.select-category {
+  background-color: #f7fafc; /* Màu nền */
+  color: #4a5568; /* Màu xám */
+  padding: 0.5rem;
+  border-radius: 9999px 0 0 9999px; /* Bo tròn bên trái */
+  border: none;
+}
+
+.search-input {
+  background-color: #f7fafc; /* Màu nền */
+  padding: 0.5rem;
+  border-radius: 0 9999px 9999px 0; /* Bo tròn bên phải */
+  border: none;
+}
+
+.search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #4a5568; /* Màu xám */
+}
+
+/* Help Button */
+.help-button {
+  background-color: #dd6b20; /* Màu cam */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* Đường tròn */
+}
+
+/* Account */
+.account {
+  display: flex;
+  align-items: center;
+  color: #4a5568; /* Màu xám */
+}
+
+/* Shopping Cart */
+.shopping-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #4a5568; /* Màu xám */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #dd6b20; /* Màu cam */
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px; /* Đường tròn */
 }
