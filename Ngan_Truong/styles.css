@@ -17,10 +17,13 @@ body {
     width: 50%;
 }
 
+.search-icon{
+    cursor: pointer;
+}
+
 .user-options button {
     margin-left: 15px;
 }
-
 
 .product-grid {
     margin-top: 20px;

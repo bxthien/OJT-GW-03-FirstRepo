@@ -6,7 +6,7 @@ async function fetchProducts() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        allProducts = await response.json(); 
+        allProducts = await response.json();
         displayProducts(allProducts); 
     } catch (error) {
         console.error('Error fetching products:', error);
@@ -19,10 +19,11 @@ function displayProducts(products) {
     const resultsDiv = document.getElementById('searchResults');
     resultsDiv.innerHTML = ''; 
 
+
     products.forEach(product => {
 
         const productCard = `
-            <div class="col-md-3"> 
+            <div class="col-md-3">
                 <div class="card">
                     <img src="${product.image}" class="card-img-top product-image" alt="${product.title}">
                     <div class="card-body">
@@ -38,11 +39,24 @@ function displayProducts(products) {
 }
 
 // Search functionality
-document.getElementById('searchInput').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
+function searchProducts() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
     const filteredProducts = allProducts.filter(product => product.title.toLowerCase().includes(query));
-    displayProducts(filteredProducts); 
+    displayProducts(filteredProducts);
+}
+
+
+// Listen for Enter key press
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if(event.key === 'Enter') {
+        searchProducts();
+    }
 });
 
+
+// Listen for search icon click
+document.querySelector('.search-icon').addEventListener('click', function() {
+    searchProducts();
+});
 
 fetchProducts();
