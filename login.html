@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Quang_Vu/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1 class="box-item">Login</h1>
+      <form action="/login">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required
+        />
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <div class="forgot-password">
+          <a href="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="register-item">
+        <p class="text-register">Or Sign Up Using</p>
+      </div>
+
+      <div class="icon-item">
+        <img class="icon" src="assets/facebook.png" alt="facebook" />
+        <img class="icon" src="assets/twitter.png" alt="twitter" />
+        <img class="icon" src="assets/google.jpg" alt="google" />
+      </div>
+    </div>
+  </body>
+</html>
