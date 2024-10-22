@@ -27,11 +27,10 @@ html, body {
 
 /* Left Column */
 .left-column img {
-  width: 80%;
+  width: 40%;
   position: absolute;
-  left: 0;
+  left: 30px;
   top: 0;
-  opacity: 0;
   transition: all 0.3s ease;
 }
 
@@ -401,3 +400,151 @@ html, body {
   padding: 0.2rem 0.5rem;
   border-radius: 9999px; /* Đường tròn */
 }
+
+/* From Uiverse.io by Creatlydev */ 
+.card {
+  margin: auto;
+  width: min(300px, 100%);
+  background-color: #fefefe;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  color: #141417;
+}
+.card__hero {
+  background-color: #fef4e2;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}
+.card__hero .card__job-title {
+  font-size: 1rem;
+  font-weight: 20;
+}
+.card__hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  font-weight: 700;
+}
+.card__footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 0.75rem;
+  row-gap: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+@media (min-width: 340px) {
+  .card__footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+.card__job-summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+.card__btn {
+  width: 100%;
+  font-weight: 400;
+  border: none;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem;
+  background-color: #141417;
+  color: #fff;
+  font-size: 1rem;
+}
+@media (min-width: 340px) {
+  .card__btn {
+    width: max-content;
+  }
+}
+
+.container-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center the cards */
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  width: 250px; /* Set a fixed width */
+  height: 350px; /* Set a fixed height */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s; /* Add a transition effect */
+}
+
+.card:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.card__hero {
+  flex: 1; /* Allow hero section to take available space */
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: flex-start; /* Align items at the top */
+  padding: 16px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.card__image {
+  cursor: pointer;
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+
+.card__hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__job-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 8px 0; /* Margin for spacing */
+}
+
+.card__footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background-color: #0056b3;
+}
+
