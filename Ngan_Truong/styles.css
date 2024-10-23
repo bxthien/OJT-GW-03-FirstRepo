@@ -29,6 +29,24 @@ body {
     margin-top: 20px;
 }
 
+
+/* Suggestion list dropdown */
+#suggestionList {
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#suggestionList .list-group-item {
+    cursor: pointer;
+}
+
+#suggestionList .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+
+
 /* Product card styling */
 
 .product-image {

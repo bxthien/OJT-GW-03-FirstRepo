@@ -14,14 +14,13 @@ async function fetchProducts() {
     }
 }
 
-// Function to display products
+// Function to display products in the main grid
 function displayProducts(products) {
     const resultsDiv = document.getElementById('searchResults');
     resultsDiv.innerHTML = ''; 
 
 
     products.forEach(product => {
-
         const productCard = `
             <div class="col-md-3">
                 <div class="card">
@@ -38,25 +37,61 @@ function displayProducts(products) {
     });
 }
 
-// Search functionality
+// Function to display product suggestions in the dropdown
+function showSuggestions(products) {
+    const suggestionList = document.getElementById('suggestionList');
+    suggestionList.innerHTML = ''; 
+
+    if (products.length === 0) {
+        suggestionList.style.display = 'none';
+        return;
+    }
+
+    products.forEach(product => {
+        const suggestionItem = document.createElement('li');
+        suggestionItem.classList.add('list-group-item');
+        suggestionItem.textContent = product.title;
+
+        // Handle click on suggestion
+        suggestionItem.addEventListener('click', () => {
+            document.getElementById('searchInput').value = product.title;
+            searchProducts();  
+            suggestionList.style.display = 'none';
+        });
+
+        suggestionList.appendChild(suggestionItem);
+    });
+
+    suggestionList.style.display = 'block';  // Show the dropdown
+}
+
+// Function to handle search
 function searchProducts() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const filteredProducts = allProducts.filter(product => product.title.toLowerCase().includes(query));
     displayProducts(filteredProducts);
 }
 
+// Event listeners for search input
+document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const relatedProducts = allProducts.filter(product => product.title.toLowerCase().includes(query));
+    showSuggestions(relatedProducts);  // Show suggestions based on input
+});
 
-// Listen for Enter key press
+// Search by enter key
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
-    if(event.key === 'Enter') {
-        searchProducts();
+    if (event.key === 'Enter') {
+        searchProducts();  
+        document.getElementById('suggestionList').style.display = 'none';  // Hide suggestion list
     }
 });
 
-
-// Listen for search icon click
+// Search by icon click
 document.querySelector('.search-icon').addEventListener('click', function() {
-    searchProducts();
+    searchProducts();  
+    document.getElementById('suggestionList').style.display = 'none'; 
 });
+
 
 fetchProducts();
