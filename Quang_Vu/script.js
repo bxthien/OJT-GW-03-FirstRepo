@@ -1,67 +1,58 @@
 async function login(event) {
+  event.preventDefault();
+  const toast = document.querySelector(".toast");
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  const message = document.getElementById("message");
 
-    event.preventDefault();
-    const toast = document.querySelector('.toast');
-    const user = document.getElementById("username").value
-    const pass = document.getElementById("password").value
-    const message = document.getElementById('message')
-  
   try {
-    
-    const response = await fetch('https://fakestoreapi.com/auth/login', {
-      method: 'POST',
+    const response = await fetch("https://fakestoreapi.com/auth/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username: user,
-        password: pass
-      })
+        password: pass,
+      }),
     });
-  
+
     const data = await response.json();
 
-    
-    
-    
     if (data.token) {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", user);
+      localStorage.setItem("authToken", data.token);
 
-          localStorage.setItem('isLoggedIn', 'true');
-          localStorage.setItem('username', user);
-          localStorage.setItem('authToken', data.token); 
+      message.innerText = "login success!";
+      toast.classList.add("show");
+      toast.style.backgroundColor = "green";
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
 
-
-          message.innerText ='login success!'
-          toast.classList.add('show');
-          toast.style.backgroundColor = 'green'
-          setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
-     
-      
+      window.location.href = "index.html";
     } else {
-        message.innerText ='login failed!'
+      message.innerText = "login failed!";
     }
   } catch (error) {
-    message.innerText ='login failed!'
-    toast.style.backgroundColor = 'red'
-              toast.classList.add('show');
-          setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);
+    message.innerText = "login failed!";
+    toast.style.backgroundColor = "red";
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
   }
 }
 
 async function checkLoginState() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    const token = localStorage.getItem('authToken');
-    const logoutButton = document.getElementById('logoutButton');
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const token = localStorage.getItem("authToken");
+  const logoutButton = document.getElementById("logoutButton");
 
-    if (isLoggedIn && token) {    
-        logoutButton.style.display = 'block';
-        
-    } else {
-        logoutButton.style.display = 'none'; 
-    }
+  if (isLoggedIn && token) {
+    logoutButton.style.display = "block";
+  } else {
+    logoutButton.style.display = "none";
+  }
 }
-
