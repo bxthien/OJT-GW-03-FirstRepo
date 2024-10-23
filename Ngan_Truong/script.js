@@ -19,7 +19,6 @@ function displayProducts(products) {
     const resultsDiv = document.getElementById('searchResults');
     resultsDiv.innerHTML = ''; 
 
-
     products.forEach(product => {
         const productCard = `
             <div class="col-md-3">
@@ -40,7 +39,7 @@ function displayProducts(products) {
 // Function to display product suggestions in the dropdown
 function showSuggestions(products) {
     const suggestionList = document.getElementById('suggestionList');
-    suggestionList.innerHTML = ''; 
+    suggestionList.innerHTML = '';  
 
     if (products.length === 0) {
         suggestionList.style.display = 'none';
@@ -55,7 +54,7 @@ function showSuggestions(products) {
         // Handle click on suggestion
         suggestionItem.addEventListener('click', () => {
             document.getElementById('searchInput').value = product.title;
-            searchProducts();  
+            searchProducts(); 
             suggestionList.style.display = 'none';
         });
 
@@ -76,14 +75,20 @@ function searchProducts() {
 document.getElementById('searchInput').addEventListener('input', function() {
     const query = this.value.toLowerCase();
     const relatedProducts = allProducts.filter(product => product.title.toLowerCase().includes(query));
-    showSuggestions(relatedProducts);  // Show suggestions based on input
+    
+    // Show or hide suggestion list based on input
+    if (query.trim() === '') {
+        document.getElementById('suggestionList').style.display = 'none'; // Hide suggestion list
+    } else {
+        showSuggestions(relatedProducts);  // Show suggestions based on input
+    }
 });
 
-// Search by enter key
+// Search by press enter key
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        searchProducts();  
-        document.getElementById('suggestionList').style.display = 'none';  // Hide suggestion list
+        searchProducts(); 
+        document.getElementById('suggestionList').style.display = 'none';  
     }
 });
 
@@ -93,5 +98,24 @@ document.querySelector('.search-icon').addEventListener('click', function() {
     document.getElementById('suggestionList').style.display = 'none'; 
 });
 
+// Hide suggestion list when clicking outside the search bar
+document.addEventListener('click', function(event) {
+    const suggestionList = document.getElementById('suggestionList');
+    const searchBar = document.getElementById('searchInput');
+    
+    // Hide the suggestion list if the click is outside the search bar and suggestion list
+    if (!searchBar.contains(event.target) && !suggestionList.contains(event.target)) {
+        suggestionList.style.display = 'none';
+    }
+});
+
+// Prevent the suggestion list from hiding when clicking inside the search bar or the suggestions
+document.getElementById('searchInput').addEventListener('focus', function() {
+    const query = this.value.toLowerCase();
+    if (query.trim() !== '') {
+        const relatedProducts = allProducts.filter(product => product.title.toLowerCase().includes(query));
+        showSuggestions(relatedProducts);
+    }
+});
 
 fetchProducts();
