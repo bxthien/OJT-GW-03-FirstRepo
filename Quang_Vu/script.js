@@ -20,18 +20,26 @@ async function login(event) {
     });
   
     const data = await response.json();
+
     
     
-    if (response.ok && data.token) {
-      
+    
+    if (data.token) {
+
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('username', user);
+          localStorage.setItem('authToken', data.token); 
+
 
           message.innerText ='login success!'
           toast.classList.add('show');
           toast.style.backgroundColor = 'green'
           setTimeout(() => {
             toast.classList.remove('show');
-        }, 3000);
-      fetchUser(data.token);
+          }, 3000);
+      
+      window.location.href = 'index.html';
+     
       
     } else {
         message.innerText ='login failed!'
@@ -46,4 +54,16 @@ async function login(event) {
   }
 }
 
+async function checkLoginState() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const token = localStorage.getItem('authToken');
+    const logoutButton = document.getElementById('logoutButton');
+
+    if (isLoggedIn && token) {    
+        logoutButton.style.display = 'block';
+        
+    } else {
+        logoutButton.style.display = 'none'; 
+    }
+}
 
