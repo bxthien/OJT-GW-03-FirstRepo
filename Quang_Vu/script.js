@@ -4,9 +4,7 @@ async function login(event) {
     const toast = document.querySelector('.toast');
     const user = document.getElementById("username").value
     const pass = document.getElementById("password").value
-              const message = document.getElementById(
-            'message'
-  )
+    const message = document.getElementById('message')
   
   try {
     
@@ -25,7 +23,7 @@ async function login(event) {
     
     
     if (response.ok && data.token) {
-        console.log(data); 
+      
 
           message.innerText ='login success!'
           toast.classList.add('show');
@@ -33,7 +31,8 @@ async function login(event) {
           setTimeout(() => {
             toast.classList.remove('show');
         }, 3000);
-      fetchProducts(data?.token);
+      fetchUser(data.token);
+      
     } else {
         message.innerText ='login failed!'
     }
