@@ -16,16 +16,20 @@
             <div class="logo">
                 <h1>E-commerce</h1>
             </div>
-            <div class="search-bar">
-                <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <span class="input-group-text search-icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
+            <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <span class="input-group-text search-icon">
+                    <i class="fas fa-search"></i>
+                    </span>
                 </div>
             </div>
+        <!-- Dropdown for suggestions -->
+        <ul id="suggestionList" class="list-group position-absolute w-50" style="z-index: 100;"></ul>
+    </div>
+
             <div class="user-options d-flex">
                 <button class="btn">Help</button>
                 <button class="btn">Account</button>
