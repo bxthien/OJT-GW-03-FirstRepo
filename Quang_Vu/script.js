@@ -6,7 +6,8 @@ async function login(event) {
     const pass = document.getElementById("password").value
               const message = document.getElementById(
             'message'
-          )
+  )
+  
   try {
     
     const response = await fetch('https://fakestoreapi.com/auth/login', {
@@ -22,7 +23,9 @@ async function login(event) {
   
     const data = await response.json();
     
-      if (data?.token) {
+    
+    if (response.ok && data.token) {
+        console.log(data); 
 
           message.innerText ='login success!'
           toast.classList.add('show');
