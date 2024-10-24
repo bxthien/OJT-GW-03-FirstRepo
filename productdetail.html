@@ -1,288 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="Quoc_trung/css/style.css" rel="stylesheet">
-    <meta name="robots" content="noindex,follow" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
-    <script src="Quoc_trung/js/script.js" charset="utf-8"></script>
-    <script src="Tran_Duy/script.js" charset="utf-8" defer></script>
-  </head>
-  <div>
-  <body class="background-gray">
-    <header class="header-amber">
-        <div class="container">
-            <div class="logo-nav">
-                <h1 class="logo">E-commerce</h1>
-                <nav class="nav-links">
-                    <a href="#" class="nav-item">Jewelry & Accessories</a>
-                    <a href="#" class="nav-item">Clothing & Shoes</a>
-                    <a href="#" class="nav-item">Home & Living</a>
-                    <a href="#" class="nav-item active">Wedding & Party</a>
-                    <a href="#" class="nav-item">Toys & Entertainment</a>
-                    <a href="#" class="nav-item">Art & Collectibles</a>
-                    <a href="#" class="nav-item">Craft Supplies & Tools</a>
-                </nav>
-            </div>
-            <div class="header-actions">
-                <div class="search-bar">
-                    <select class="select-category">
-                        <option>All categories</option>
-                    </select>
-                    <input type="text" placeholder="Search anything" class="search-input">
-                    <button class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <button class="help-button">Help</button>
-                <div class="account">
-                    <i class="fas fa-user"></i>
-                    <span>Account</span>
-                </div>
-                <div class="shopping-cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span>Shopping</span>
-                    <span class="cart-count">18</span>
-                </div>
-            </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="Quoc_trung/css/style.css" rel="stylesheet">
+  <meta name="robots" content="noindex,follow" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <script src="Quoc_trung/js/script.js" charset="utf-8"></script>
+</head>
+
+<body class="background-gray">
+  <header class="header-amber">
+    <div class="container">
+      <div class="logo-nav">
+        <h1 class="logo">E-commerce</h1>
+        <nav class="nav-links">
+          <a href="#" class="nav-item">Jewelry & Accessories</a>
+          <a href="#" class="nav-item">Clothing & Shoes</a>
+          <a href="#" class="nav-item">Home & Living</a>
+          <a href="#" class="nav-item active">Wedding & Party</a>
+          <a href="#" class="nav-item">Toys & Entertainment</a>
+          <a href="#" class="nav-item">Art & Collectibles</a>
+          <a href="#" class="nav-item">Craft Supplies & Tools</a>
+        </nav>
+      </div>
+      <div class="header-actions">
+        <div class="search-bar">
+          <select class="select-category">
+            <option>All categories</option>
+          </select>
+          <input type="text" placeholder="Search anything" class="search-input">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
-    </header>
-  </div>
-<!--End Header-->
+        <button class="help-button">Help</button>
+        <div class="account">
+          <i class="fas fa-user"></i>
+          <span>Account</span>
+        </div>
+        <div class="shopping-cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span>Shopping</span>
+          <span class="cart-count">18</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<!--Start Product Detail-->
-<div>
-    <main class="container">
+  <!-- Start Product Detail -->
+  <main class="container">
+    <div class="left-column">
+      <img id="product-image" src="" alt="Product Image">
+    </div>
 
-      <!-- Left Column / Headphones Image -->
-      <div class="left-column">
+    <div class="right-column">
+      <div class="product-description">
+        <span id="product-category"></span>
+        <h1 id="product-title"></h1>
+        <p id="product-description"></p>
       </div>
 
-
-      <!-- Right Column -->
-      <div class="right-column">
-
-        <!-- Product Description -->
-        <div class="product-description">
-          <span>Headphones</span>
-          <h1 style="font-weight: bold;">Beats EP</h1>
-          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
-        </div>
-
-        <div class="product-configuration">
-          <div class="product-color">
-            <span>Color</span>
-
-            <div class="color-choose">
-              <div>
-                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-                <label for="red"><span></span></label>
-              </div>
-              <div>
-                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
-                <label for="blue"><span></span></label>
-              </div>
-              <div>
-                <input data-image="black" type="radio" id="black" name="color" value="black">
-                <label for="black"><span></span></label>
-              </div>
-            </div>
-
+      <div class="product-configuration">
+        <div class="product-color">
+          <span>Color</span>
+          <div class="color-choose">
+            <!-- Color options can be dynamically added here -->
           </div>
-
-          
         </div>
-
-        <div class="product-price">
-          <span style="font-weight: bold;">148$</span>
-          <a href="#" class="cart-btn">Add to cart</a>
-        </div>
-        <button class="view-cart-btn">View Cart</button>
-
-        <div class="cart" style="display: none;">
-          <h2>Your Cart</h2>
-          <ul class="cart-contents"></ul>
-          <p>Total: $<span class="cart-total">0</span></p>
-          <button class="close-cart-btn">Close</button> 
       </div>
-</div>
 
-      
+      <div class="product-price">
+        <span id="product-price" style="font-weight: bold;"></span>
+        <a href="#" class="cart-btn">Add to cart</a>
       </div>
-    </main>
-  </div>
-  </body>
-  <!--End Product Detail-->
+      <button class="view-cart-btn">View Cart</button>
 
-  <div class="container-product">
-
-    <!-- <article class="card">
-      <section class="card__hero">
-        <header class="card__hero-header">
-          <span>$150/hr</span>
-          <div class="card__icon">
-            <svg
-              height="20"
-              width="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </div>
-        </header>
-  
-        <p class="card__job-title">Senior Backend Engineer</p>
-      </section>
-  
-      <footer class="card__footer">
-        <div class="card__job-summary">
-          <div class="card__job-icon">
-            </div>
-          <div class="card__job">
-            <p class="card__job-title">
-              Senior Backend <br />
-              Engineer
-            </p>
-          </div>
-        </div>
-  
-        <button class="card__btn">view</button>
-      </footer>
-    </article> -->
-  
-    <!-- <article class="card">
-      <section class="card__hero">
-        <header class="card__hero-header">
-          <span>$150/hr</span>
-          <div class="card__icon">
-            <svg
-              height="20"
-              width="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </div>
-        </header>
-  
-        <p class="card__job-title">Senior Backend Engineer</p>
-        </section>
-      <footer class="card__footer">
-        <button class="card__btn">view</button>
-      </footer>
-    </article>
-  
-    <article class="card">
-      <section class="card__hero">
-        <header class="card__hero-header">
-          <span>$150/hr</span>
-          <div class="card__icon">
-            <svg
-              height="20"
-              width="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </div>
-        </header>
-  
-        <p class="card__job-title">Senior Backend Engineer</p>
-        </section>
-      <footer class="card__footer">
-        <button class="card__btn">view</button>
-      </footer>
-    </article>
-  
-    <article class="card">
-      <section class="card__hero">
-        <header class="card__hero-header">
-          <span>$150/hr</span>
-          <div class="card__icon">
-            <svg
-              height="20"
-              width="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </div>
-        </header>
-  
-        <p class="card__job-title">Senior Backend Engineer</p>
-        </section>
-      <footer class="card__footer">
-        <button class="card__btn">view</button>
-      </footer>
-    </article>
-
-    <article class="card">
-      <section class="card__hero">
-        <header class="card__hero-header">
-          <span>$150/hr</span>
-          <div class="card__icon">
-            <svg
-              height="20"
-              width="20"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </div>
-        </header>
-  
-        <p class="card__job-title">Senior Backend Engineer</p>
-        </section>
-      <footer class="card__footer">
-        <button class="card__btn">view</button>
-      </footer>
-    </article> -->
-  
-  </div>
+      <div class="cart" style="display: none;">
+        <h2>Your Cart</h2>
+        <ul class="cart-contents"></ul>
+        <p>Total: $<span class="cart-total">0</span></p>
+        <button class="close-cart-btn">Close</button>
+      </div>
+    </div>
+    </div>
+  </main>
+</body>
 
 </html>
