@@ -19,38 +19,11 @@ body {
     margin: 0 auto;
 }
 
-.logo-nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
 .logo {
-    color: #f97316;
+    color: #11e74d;
     font-size: 24px;
     font-weight: bold;
     margin-right: 32px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 16px;
-}
-
-.nav-item {
-    color: #4b5563;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 15px;
-}
-
-.nav-item:hover {
-    color: #f97316;
-}
-
-.active {
-    color: #f97316;
-    border-bottom: 2px solid #f97316;
 }
 
 .search-actions {
@@ -98,7 +71,7 @@ body {
 }
 
 .help-btn {
-    background-color: #f97316;
+    background-color: #00ff40;
     color: white;
     padding: 8px 16px;
     border-radius: 9999px;
@@ -134,7 +107,7 @@ body {
     position: absolute;
     top: -8px;
     right: -12px;
-    background-color: #f97316;
+    background-color: #00ff40;
     color: white;
     font-size: 12px;
     border-radius: 9999px;

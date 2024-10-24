@@ -4,7 +4,7 @@ fetch('https://fakestoreapi.com/products')
   .then(async res => {
     const data = await res.json();
     data.map((item) => productslist.push(item));
-    
+
     displayProducts(data);
   })
   .catch(err => console.error('Error fetching products:', err));
@@ -45,9 +45,9 @@ function displayProducts(products) {
 // Function to handle image click
 function handleImageClick(id) {
   const itemProduct = productslist.find(item => Number(item.id) === Number(id));
-  
+
   const container = document.querySelector('.left-column');
-  container.innerHTML = `<img src="${itemProduct.image}" alt="${itemProduct.title}">`; 
+  container.innerHTML = `<img src="${itemProduct.image}" alt="${itemProduct.title}">`;
 
   const descriptionContainer = document.querySelector('.right-column .product-description');
   descriptionContainer.innerHTML = `
