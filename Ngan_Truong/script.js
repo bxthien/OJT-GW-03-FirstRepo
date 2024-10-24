@@ -14,11 +14,23 @@ async function fetchProducts() {
     }
 }
 
-// Function to display products in the main grid
+// Function to display products
 function displayProducts(products) {
     const resultsDiv = document.getElementById('searchResults');
     resultsDiv.innerHTML = ''; 
 
+    if (products.length === 0) {
+        // No products found
+        resultsDiv.innerHTML = `
+            <div class="no-products-found">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2lraWNqMjg1bTRmc2Z0YTU3Z2MzbW41ZHc3cWo3Nnp2aXlia3gxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lPM06f2zvk94jBAzlP/giphy.webp" alt="No products found" class="no-products-image">
+                <p class="no-products-text">No products found</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Display found products
     products.forEach(product => {
         const productCard = `
             <div class="col-md-3">
@@ -35,6 +47,7 @@ function displayProducts(products) {
         resultsDiv.innerHTML += productCard;
     });
 }
+
 
 // Function to display product suggestions in the dropdown
 function showSuggestions(products) {
