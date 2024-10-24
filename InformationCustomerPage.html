@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin khách hàng</title>
-    <link rel="stylesheet" href="Quang_Thang/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Quang_Thang/styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Thông tin khách hàng</h1>
-            <button class="edit-btn" onclick="toggleEdit()">
-                <span class="edit-icon"><span class="glyphicon glyphicon-pencil"></span>
-                <span class="edit-text">Chỉnh sửa</span>
-            </button>
+            <div class="button-group">
+                <button class="edit-btn" onclick="toggleEdit()">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="edit-text">Chỉnh sửa</span>
+                </button>
+                <button class="save-btn" onclick="saveChanges()">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                    <span class="save-text">Lưu</span>
+                </button>
+            </div>
         </div>
 
         <div class="info-grid">
@@ -22,8 +28,8 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-user"></span>Họ và tên
                 </div>
-                <div class="info-content" id="name-container">
-                    <span class="info-value">Nguyễn Văn A</span>
+                <div class="info-content">
+                    <input type="text" class="info-input" id="fullname" name="fullname" placeholder="Nhập họ và tên" disabled>
                 </div>
             </div>
 
@@ -31,8 +37,15 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-phone"></span>Số điện thoại
                 </div>
-                <div class="info-content" id="phone-container">
-                    <span class="info-value">0912345678</span>
+                <div class="info-content">
+                    <input type="tel" 
+                           class="info-input"
+                           id="phone"
+                           name="phone"
+                           placeholder="Nhập số điện thoại"
+                           pattern="[0-9]{10}"
+                           maxlength="10"
+                           disabled>
                 </div>
             </div>
 
@@ -40,8 +53,8 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-envelope"></span>Email
                 </div>
-                <div class="info-content" id="email-container">
-                    <span class="info-value">nguyenvana@email.com</span>
+                <div class="info-content">
+                    <input type="email" class="info-input" id="email" name="email" placeholder="Nhập email" disabled>
                 </div>
             </div>
 
@@ -49,8 +62,8 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-home"></span>Địa chỉ
                 </div>
-                <div class="info-content" id="address-container">
-                    <span class="info-value">123 Đường ABC, Quận 1, TP.HCM</span>
+                <div class="info-content">
+                    <input type="text" class="info-input" id="address" name="address" placeholder="Nhập địa chỉ" disabled>
                 </div>
             </div>
 
@@ -58,8 +71,8 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-briefcase"></span>Công ty
                 </div>
-                <div class="info-content" id="company-container">
-                    <span class="info-value">Công ty TNHH XYZ</span>
+                <div class="info-content">
+                    <input type="text" class="info-input" id="company" name="company" placeholder="Nhập tên công ty" disabled>
                 </div>
             </div>
 
@@ -67,12 +80,17 @@
                 <div class="info-label">
                     <span class="icon"><span class="glyphicon glyphicon-calendar"></span>Ngày tham gia
                 </div>
-                <div class="info-content" id="date-container">
-                    <span class="info-value">01/01/2023</span>
+                <div class="info-content">
+                    <input type="date" class="info-input" id="date" name="date" disabled>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="success-message" id="successMessage">
+        Đã lưu thành công!
+    </div>
+
     <script src="Quang_Thang/script.js"></script>
 </body>
 </html>
