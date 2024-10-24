@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,25 +121,28 @@
     </footer>
 
     <script>
-        // Fake API
         fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(json => {
-        const productsContainer = document.getElementById('products');
-        json.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product-item');
-            productDiv.innerHTML = `
+            .then(res => res.json())
+            .then(json => {
+                const productsContainer = document.getElementById('products');
+                json.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product-item');
+                    productDiv.innerHTML = `
                 <h3>${product.title}</h3>
                 <img src="${product.image}" alt="${product.title}">
                 <p>${product.description.substring(0, 50)}...</p>
                 <p>Price: $${product.price}</p>
             `;
-            productsContainer.appendChild(productDiv);
-        });
-    })
-    .catch(err => console.error(err));
-
+                    // Add event to product
+                    productDiv.addEventListener('click', () => {
+                        window.location.href = `productdetail.html?id=${product.id}`;
+                    });
+                    productsContainer.appendChild(productDiv);
+                });
+            })
+            .catch(err => console.error(err));
     </script>
 </body>
+
 </html>
