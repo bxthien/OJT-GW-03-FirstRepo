@@ -31,7 +31,7 @@ async function login(event) {
         toast.classList.remove("show");
       }, 3000);
 
-      window.location.href = "index.html";
+      window.location.href = "headerUI.html";
     } else {
       message.innerText = "login failed!";
     }
