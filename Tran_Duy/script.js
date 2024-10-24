@@ -71,3 +71,83 @@ document.querySelector('.view-cart-btn').addEventListener('click', () => {
 document.querySelector('.close-cart-btn').addEventListener('click', () => {
     document.querySelector('.cart').style.display = 'none'; 
 });
+cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            ${item.name} (Color: ${item.color}) - 
+            Price: $${item.price.toFixed(2)} 
+            <button class="decrease-qty" data-index="${index}">-</button> 
+            <span class="item-quantity">${item.quantity}</span> 
+            <button class="increase-qty" data-index="${index}">+</button> 
+            <button class="remove-item" data-index="${index}">Remove</button>
+        `;
+        cartContents.appendChild(li);
+        total += item.price * item.quantity;
+    });function displayCart() {
+        const cartContents = document.querySelector('.cart-contents');
+        const cartTotal = document.querySelector('.cart-total');
+        cartContents.innerHTML = ''; 
+        let total = 0;
+    
+        
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.name} (Color: ${item.color}) - 
+                Price: $${item.price.toFixed(2)} 
+                <button class="decrease-qty" data-index="${index}">-</button> 
+                <span class="item-quantity">${item.quantity}</span> 
+                <button class="increase-qty" data-index="${index}">+</button> 
+                <button class="remove-item" data-index="${index}">Remove</button>
+            `;
+            cartContents.appendChild(li);
+            total += item.price * item.quantity;
+        });
+    
+        cartTotal.innerText = total.toFixed(2);
+        document.querySelector('.cart').style.display = 'block'; 
+    
+        document.querySelectorAll('.increase-qty').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                updateQuantity(index, 1);
+            });
+        });
+    
+        document.querySelectorAll('.decrease-qty').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                updateQuantity(index, -1);
+            });
+        });
+    
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                removeItem(index);
+            });
+        });
+    }
+    function updateQuantity(index, change) {
+        const item = cart[index];
+        item.quantity += change;
+    
+        if (item.quantity <= 0) {
+            alert("Quantity must be at least 1. To remove the item, click 'Remove'.");
+            item.quantity = 1;
+        }
+        
+        displayCart();
+    }
+    function removeItem(index) {
+        cart.splice(index, 1);
+        displayCart();
+    }
+    
+    document.querySelector('.view-cart-btn').addEventListener('click', () => {
+        displayCart();
+    });
+    
+    document.querySelector('.close-cart-btn').addEventListener('click', () => {
+        document.querySelector('.cart').style.display = 'none'; // Hide cart
+    });
